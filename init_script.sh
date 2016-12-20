@@ -3,6 +3,8 @@ sudo yum install -y docker
 sudo systemctl enable docker.service
 sudo systemctl start docker
 sudo service docker start
+sudo iptables -A INPUT -p tcp -m tcp --dport 9200 -j ACCEPT
+sudo iptables -A INPUT -p tcp -m tcp --dport 5600 -j ACCEPT
 sudo docker run -d -p 9200:9200 -v "/home/esdata":/usr/share/elasticsearch/data --name elasticsearch --restart always elasticsearch
 sudo docker run --link elasticsearch:elasticsearch -d -p 5601:5601  --name kibana --restart always kibana
 sudo docker run --name redis -p 6379:6379 -d --restart always redis

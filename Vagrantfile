@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "centos7"
+  config.vm.box = "centos/7"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -38,7 +38,7 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
 	config.vm.synced_folder "logstash_conf", "/home/logstash_conf"
 	config.vm.synced_folder "sample_log", "/home/sample_log"
-	config.vm.synced_folder "esdata", "/home/esdata"	
+	config.vm.synced_folder "esdata", "/home/esdata"
 	
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.

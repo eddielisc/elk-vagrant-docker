@@ -30,16 +30,12 @@ just a ELK (<b>elasticsearch</b>, <b>redis</b>, <b>logstash</b>) pulled by <b>do
   
 	config.vm.synced_folder "esdata", "/home/esdata"
 
-###### netowrk ip
-
-	config.vm.network "private_network", ip: "55.55.55.55"
-
 ## start the vagrant
 
 > vagrant up
 
 ## After RUN it
 
-http://55.55.55.55:5601/   kibana index page
+http://localhost:5601/   kibana index page
 
-http://55.55.55.55:9200/  elasticsearch welcome page
+http://localhost:9200/  elasticsearch welcome page

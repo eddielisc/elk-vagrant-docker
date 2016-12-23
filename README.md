@@ -4,9 +4,11 @@
 
 just a ELK (<b>elasticsearch</b>, <b>logstash</b>, <b>kibana</b>, <b>redis</b>) in a <b>vagrant</b> with <b>docker-compose</b> feature for development/testing
 
-<b>version will be updated based on docker image</b>
+version will be updated based on docker image
 
-### what in the vagrant box installed with docker & docker compose
+#### what in the vagrant box 
+
+installed with docker & docker compose
 
 logs files -> shipper -> redis - > indexer -> elasticsearch <- kibana
 

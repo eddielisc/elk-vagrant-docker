@@ -6,9 +6,9 @@ just a ELK (<b>elasticsearch</b>, <b>logstash</b>, <b>kibana</b>, <b>redis</b>) 
 
 <b>version will be updated based on docker image</b>
 
-vagrant
-|docker/docker-compose
-|  logs files -> shipper -> redis - > indexer -> elasticsearch <- kibana
+what in the vagrant box installed with docker & docker compose
+
+logs files -> shipper -> redis - > indexer -> elasticsearch <- kibana
 
 ## Before RUN it
 

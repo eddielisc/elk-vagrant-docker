@@ -6,13 +6,13 @@ just a ELK (<b>elasticsearch</b>, <b>logstash</b>, <b>kibana</b>, <b>redis</b>) 
 
 <b>version will be updated based on docker image</b>
 
-what in the vagrant box installed with docker & docker compose
+### what in the vagrant box installed with docker & docker compose
 
 logs files -> shipper -> redis - > indexer -> elasticsearch <- kibana
 
 ## Before RUN it
 
-please install the followning
+please install the following
 
 <a href="https://www.virtualbox.org/wiki/Downloads">virtualbox</a>
 

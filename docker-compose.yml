@@ -2,8 +2,6 @@ elasticsearch:
   image: elasticsearch
   ports:
     - "9200:9200"
-  volumes:
-    - /vagrant/esdata:/usr/share/elasticsearch/data
 kibana:
   image: kibana
   ports:

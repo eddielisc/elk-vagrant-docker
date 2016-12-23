@@ -8,15 +8,21 @@ just a ELK (<b>elasticsearch</b>, <b>redis</b>, <b>logstash</b>) in a <b>vagrant
 
 ## Before RUN it
 
-<a href="https://www.virtualbox.org/wiki/Downloads">virtualbox</a>, <a href="https://www.vagrantup.com/downloads.html">vagrant</a> are needed
+please install the followning
+
+<a href="https://www.virtualbox.org/wiki/Downloads">virtualbox</a>
+
+<a href="https://www.vagrantup.com/downloads.html">vagrant</a>
+
+<a href="https://github.com/leighmcculloch/vagrant-docker-compose">vagrant docker compose</a>
 
 ## File Structure
 
-<b>esdata/</b> 			data stored for elasticsearch
+| path	        	| description           				| 
+| -----------------	|---------------------------------------| 
+| logstash_conf     | centered      						|
+| sample_log 		| are neat      						|
 
-<b>logstash_conf/</b> 		shipper.conf and index.conf for logstash
-
-<b>sample_log/</b> 		log data file
 
 ## start the vagrant
 
@@ -24,6 +30,20 @@ just a ELK (<b>elasticsearch</b>, <b>redis</b>, <b>logstash</b>) in a <b>vagrant
 
 ## After RUN it
 
-http://localhost:5601/   kibana index page
+kibana
+http://localhost:5601/
 
-http://localhost:9200/  elasticsearch welcome page
+elasticsearch
+http://localhost:9200/
+
+1 log record should be able to store in elasticsearch and can view the sample json in follow link
+http://localhost:9200/logstash-*/_search
+
+
+sample json
+
+```javascript
+{"took":9,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":1,"max_score":1.0,"hits":[{"_index":"logstash-2016.12.23","_type":"logs","_id":"75fa1b3824dd6e70989a1aac8112ec8ac7eddf83","_score":1.0,"_source":{"path":"/home/sample_log/hello.log","@timestamp":"2016-12-23T13:00:45.913Z","@uuid":"4f2907b2-fc3a-4e76-926c-74bcdf2adc8a","@version":"1","host":"c06e21c02c1c","fingerprint":"75fa1b3824dd6e70989a1aac8112ec8ac7eddf83","message":"hello, see it becoz u make it","tags":[]}}]}}
+```
+
+

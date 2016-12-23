@@ -28,15 +28,33 @@ please install the followning
 
 > vagrant up
 
+## view the vagrant box
+
+> vagrant ssh
+
+> docker ps -a
+
+```bash
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                              NAMES
+f97a6f2a6853        logstash            "/docker-entrypoint.s"   About a minute ago   Up About a minute   0.0.0.0:9601->9600/tcp             vagrant_indexer_1
+3c859162f460        kibana              "/docker-entrypoint.s"   About a minute ago   Up About a minute   0.0.0.0:5601->5601/tcp             vagrant_kibana_1
+18592652c144        elasticsearch       "/docker-entrypoint.s"   About a minute ago   Up About a minute   0.0.0.0:9200->9200/tcp, 9300/tcp   vagrant_elasticsearch_1
+c06e21c02c1c        logstash            "/docker-entrypoint.s"   10 minutes ago       Up About a minute   0.0.0.0:9600->9600/tcp             vagrant_shipper_1
+1ced6396c037        redis               "docker-entrypoint.sh"   10 minutes ago       Up About a minute   0.0.0.0:6379->6379/tcp             vagrant_redis_1
+```
+
 ## After RUN it
 
 kibana
+
 http://localhost:5601/
 
 elasticsearch
+
 http://localhost:9200/
 
 1 log record should be able to store in elasticsearch and can view the sample json in follow link
+
 http://localhost:9200/logstash-*/_search
 
 

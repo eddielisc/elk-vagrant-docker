@@ -20,15 +20,15 @@ please install the followning
 
 | path	        	| description           				| 
 | -----------------	|---------------------------------------| 
-| logstash_conf     | centered      						|
-| sample_log 		| are neat      						|
+| logstash_conf     | config of logstash(indexer & shipper)      						|
+| sample_log 		| log files       						|
 
 
 ## start the vagrant
 
 > vagrant up
 
-## view the vagrant box
+## view the vagrant
 
 > vagrant ssh
 
@@ -45,11 +45,11 @@ c06e21c02c1c        logstash            "/docker-entrypoint.s"   10 minutes ago 
 
 ## After RUN it
 
-kibana
+####kibana
 
 http://localhost:5601/
 
-elasticsearch
+####elasticsearch
 
 http://localhost:9200/
 
@@ -58,7 +58,7 @@ http://localhost:9200/
 http://localhost:9200/logstash-*/_search
 
 
-sample json
+####sample json
 
 ```javascript
 {"took":9,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":1,"max_score":1.0,"hits":[{"_index":"logstash-2016.12.23","_type":"logs","_id":"75fa1b3824dd6e70989a1aac8112ec8ac7eddf83","_score":1.0,"_source":{"path":"/home/sample_log/hello.log","@timestamp":"2016-12-23T13:00:45.913Z","@uuid":"4f2907b2-fc3a-4e76-926c-74bcdf2adc8a","@version":"1","host":"c06e21c02c1c","fingerprint":"75fa1b3824dd6e70989a1aac8112ec8ac7eddf83","message":"hello, see it becoz u make it","tags":[]}}]}}

@@ -1,0 +1,36 @@
+elasticsearch:
+  image: elasticsearch
+  ports:
+    - "9200:9200"
+  volumes:
+    - /vagrant/esdata:/usr/share/elasticsearch/data
+kibana:
+  image: kibana
+  ports:
+    - "5601:5601"
+  links:
+    - elasticsearch:elasticsearch
+redis:
+  image: redis
+  ports:
+    - "6379:6379"
+shipper:
+  image: logstash
+  ports:
+    - "9600:9600"
+  command: -f /config-dir/shipper.conf
+  links:
+    - redis:redis
+  volumes:
+    - /vagrant/logstash_conf:/config-dir
+    - /vagrant/sample_log:/home/sample_log
+indexer:
+  image: logstash
+  ports:
+    - "9601:9600"
+  command: -f /config-dir/indexer.conf
+  links:
+    - redis:redis
+    - elasticsearch:elasticsearch
+  volumes:
+    - /vagrant/logstash_conf:/config-dir

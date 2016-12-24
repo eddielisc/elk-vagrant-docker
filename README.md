@@ -38,6 +38,8 @@ please install the following
 
 > vagrant ssh
 
+the applications in vagrant are pulled by docker. please use docker command.
+
 > docker ps -a
 
 ```bash
